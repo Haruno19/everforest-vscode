@@ -2,6 +2,16 @@
 
 All notable changes to the "everforest" extension will be documented in this file.
 
+## 1.0.0
+
+- **Major rewrite**: Simplified extension to static theme-only (removed runtime configuration)
+- **New custom themes**: Replaced original Everforest Dark/Light with custom variants:
+  - **Everforest Higure**: Dark theme with custom background layers (#0f0f0f → #131313 → #191919)
+  - **Everforest Yoake**: Light theme with warm #FFFAEE background
+- Removed high-contrast and medium contrast variants
+- Updated workbench color mapping to properly use custom palette backgrounds
+- Cleaned up codebase and removed unused files
+
 ## 0.3.0
 
 - Change `activationEvents`.
