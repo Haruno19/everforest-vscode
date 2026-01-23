@@ -4,20 +4,16 @@
  *  License:    MIT
  *--------------------------------------------------------------------------------------------*/
 
-import { Configuration } from "../interface";
+/*---------------------------------------------------------------------------------------------
+ *  Homepage:   https://github.com/Haruno19/everforest-vscode
+ *  Copyright:  2026 haru
+ *--------------------------------------------------------------------------------------------*/
+
 import { getPalette } from "../palette";
 import { getDefaultSyntax } from "./default";
-import { getItalicSyntax } from "./italic";
 
-export function getSyntax(configuration: Configuration, variant: string) {
-  const palette = getPalette(configuration, variant);
-  let syntax: any;
-  if (configuration.italicKeywords === true) {
-    syntax = getItalicSyntax(palette, configuration.italicComments);
-  } else {
-    syntax = getDefaultSyntax(palette, configuration.italicComments);
-  }
-  return syntax;
+export function getSyntax(variant: string) {
+  const palette = getPalette(variant);
+  // Hardcode: keywords not italic, comments italic
+  return getDefaultSyntax(palette, true);
 }
-
-// vim: fdm=marker fmr={{{,}}}:

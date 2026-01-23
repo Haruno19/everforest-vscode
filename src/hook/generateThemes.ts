@@ -4,70 +4,51 @@
  *  License:    MIT
  *--------------------------------------------------------------------------------------------*/
 
+/*---------------------------------------------------------------------------------------------
+ *  Homepage:   https://github.com/Haruno19/everforest-vscode
+ *  Copyright:  2026 haru
+ *--------------------------------------------------------------------------------------------*/
+
 import * as fs from "fs";
 import { join } from "path";
-import { Configuration } from "../interface";
 import { getWorkbench } from "../workbench";
 import { getSyntax } from "../syntax";
 import { getSemantic } from "../semantic";
 
 class Utils {
   private async writeFile(path: string, data: unknown) {
-    // {{{
     return new Promise((resolve, reject) => {
       fs.writeFile(path, JSON.stringify(data, null, 2), (err) =>
         err ? reject(err) : resolve("Success")
       );
     });
-  } // }}}
-  async generate(darkPath: string, lightPath: string, data: any) {
-    // {{{
-    this.writeFile(darkPath, data.dark);
-    this.writeFile(lightPath, data.light);
-  } // }}}
-  getThemeData(configuration: Configuration) {
-    // {{{
+  }
+
+  async generateTheme(path: string, data: any) {
+    this.writeFile(path, data);
+  }
+
+  getThemeData(variant: string, name: string, type: "dark" | "light") {
     return {
-      dark: {
-        name: "Everforest Dark",
-        type: "dark",
-        semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "dark"),
-        colors: getWorkbench(configuration, "dark"),
-        tokenColors: getSyntax(configuration, "dark"),
-      },
-      light: {
-        name: "Everforest Light",
-        type: "light",
-        semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "light"),
-        colors: getWorkbench(configuration, "light"),
-        tokenColors: getSyntax(configuration, "light"),
-      },
+      name: name,
+      type: type,
+      semanticHighlighting: true,
+      semanticTokenColors: getSemantic(variant),
+      colors: getWorkbench(variant),
+      tokenColors: getSyntax(variant),
     };
-  } // }}}
+  }
 }
 
 const utils = new Utils();
-const configuration: Configuration = {
-  darkContrast: "medium",
-  lightContrast: "medium",
-  darkWorkbench: "material",
-  lightWorkbench: "material",
-  darkSelection: "grey",
-  lightSelection: "grey",
-  darkCursor: "white",
-  lightCursor: "black",
-  italicKeywords: false,
-  italicComments: true,
-  diagnosticTextBackgroundOpacity: "0%",
-  highContrast: false,
-};
 
-utils.generate(
-  join(__dirname, "..", "..", "themes", "everforest-dark.json"),
-  join(__dirname, "..", "..", "themes", "everforest-light.json"),
-  utils.getThemeData(configuration)
+// Generate custom themes
+utils.generateTheme(
+  join(__dirname, "..", "..", "themes", "everforest-higure.json"),
+  utils.getThemeData("dark-higure", "Everforest Higure", "dark")
 );
 
-// vim: fdm=marker fmr={{{,}}}:
+utils.generateTheme(
+  join(__dirname, "..", "..", "themes", "everforest-yoake.json"),
+  utils.getThemeData("light-yoake", "Everforest Yoake", "light")
+);

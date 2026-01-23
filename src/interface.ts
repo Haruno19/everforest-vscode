@@ -4,26 +4,10 @@
  *  License:    MIT
  *--------------------------------------------------------------*/
 
-// To add a new configuration option:
-// 1. Edit package.json
-// 2. Add the configuration option in this interface
-// 3. utils.getConfiguration()
-// 4. utils.isDefaultConfiguration()
-// 5. generateThemes.ts
-export interface Configuration {
-  darkContrast?: string;
-  lightContrast?: string;
-  darkWorkbench?: string;
-  lightWorkbench?: string;
-  darkSelection?: string;
-  lightSelection?: string;
-  darkCursor?: string;
-  lightCursor?: string;
-  italicKeywords?: boolean;
-  italicComments?: boolean;
-  diagnosticTextBackgroundOpacity?: string;
-  highContrast?: boolean;
-}
+/*---------------------------------------------------------------------------------------------
+ *  Homepage:   https://github.com/Haruno19/everforest-vscode
+ *  Copyright:  2026 haru
+ *--------------------------------------------------------------------------------------------*/
 
 export interface Palette {
   bg0: string;
@@ -55,4 +39,17 @@ export interface Palette {
   badge: string;
 }
 
-// vim: fdm=marker fmr={{{,}}}:
+export interface Configuration {
+  darkContrast?: string;
+  lightContrast?: string;
+  darkWorkbench?: string;
+  lightWorkbench?: string;
+  darkSelection?: string;
+  lightSelection?: string;
+  darkCursor?: string;
+  lightCursor?: string;
+  italicKeywords?: boolean;
+  italicComments?: boolean;
+  diagnosticTextBackgroundOpacity?: string;
+  highContrast?: boolean;
+}

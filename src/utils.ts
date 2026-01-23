@@ -7,10 +7,10 @@
 import * as fs from "fs";
 import { join } from "path";
 import { ConfigurationChangeEvent, workspace, window, commands } from "vscode";
-import { Configuration } from "./interface";
 import { getWorkbench } from "./workbench";
 import { getSyntax } from "./syntax";
 import { getSemantic } from "./semantic";
+import { Configuration } from "./interface";
 
 export default class Utils {
   detectConfigChanges(
@@ -59,24 +59,24 @@ export default class Utils {
       configuration.highContrast === false
     );
   } // }}}
-  getThemeData(configuration: Configuration) {
+  getThemeData() {
     // {{{
     return {
       dark: {
         name: "Everforest Dark",
         type: "dark",
         semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "dark"),
-        colors: getWorkbench(configuration, "dark"),
-        tokenColors: getSyntax(configuration, "dark"),
+        semanticTokenColors: getSemantic("dark"),
+        colors: getWorkbench("dark"),
+        tokenColors: getSyntax("dark"),
       },
       light: {
         name: "Everforest Light",
         type: "light",
         semanticHighlighting: true,
-        semanticTokenColors: getSemantic(configuration, "light"),
-        colors: getWorkbench(configuration, "light"),
-        tokenColors: getSyntax(configuration, "light"),
+        semanticTokenColors: getSemantic("light"),
+        colors: getWorkbench("light"),
+        tokenColors: getSyntax("light"),
       },
     };
   } // }}}

@@ -4,240 +4,23 @@
  *  License:    MIT
  *--------------------------------------------------------------------------------------------*/
 
-import { Palette, Configuration } from "../interface";
+/*---------------------------------------------------------------------------------------------
+ *  Homepage:   https://github.com/Haruno19/everforest-vscode
+ *  Copyright:  2026 haru
+ *--------------------------------------------------------------------------------------------*/
 
-export function materialWorkbench(
-  palette: Palette,
-  configuration: Configuration,
-  variant: string
-) {
-  let selectionBg: string;
-  let editorSelectionBg: string;
-  let editorSelectionBgHl: string;
-  let cursorFg: string;
-  let diagnosticTextBackgroundOpacity: string;
-  if (variant === "dark") {
-    switch (
-      configuration.darkSelection // {{{
-    ) {
-      case "grey": {
-        selectionBg = `${palette.bg4}e0`;
-        editorSelectionBg = `${palette.bg4}c0`;
-        editorSelectionBgHl = `${palette.bg4}60`;
-        break;
-      }
-      case "red": {
-        selectionBg = `${palette.dimRed}60`;
-        editorSelectionBg = `${palette.dimRed}40`;
-        editorSelectionBgHl = `${palette.dimRed}20`;
-        break;
-      }
-      case "orange": {
-        selectionBg = `${palette.dimOrange}60`;
-        editorSelectionBg = `${palette.dimOrange}40`;
-        editorSelectionBgHl = `${palette.dimOrange}20`;
-        break;
-      }
-      case "yellow": {
-        selectionBg = `${palette.dimYellow}60`;
-        editorSelectionBg = `${palette.dimYellow}40`;
-        editorSelectionBgHl = `${palette.dimYellow}20`;
-        break;
-      }
-      case "green": {
-        selectionBg = `${palette.dimGreen}60`;
-        editorSelectionBg = `${palette.dimGreen}40`;
-        editorSelectionBgHl = `${palette.dimGreen}20`;
-        break;
-      }
-      case "aqua": {
-        selectionBg = `${palette.dimAqua}60`;
-        editorSelectionBg = `${palette.dimAqua}40`;
-        editorSelectionBgHl = `${palette.dimAqua}20`;
-        break;
-      }
-      case "blue": {
-        selectionBg = `${palette.dimBlue}60`;
-        editorSelectionBg = `${palette.dimBlue}40`;
-        editorSelectionBgHl = `${palette.dimBlue}20`;
-        break;
-      }
-      case "purple": {
-        selectionBg = `${palette.dimPurple}60`;
-        editorSelectionBg = `${palette.dimPurple}40`;
-        editorSelectionBgHl = `${palette.dimPurple}20`;
-        break;
-      }
-      default: {
-        selectionBg = `${palette.bg4}e0`;
-        editorSelectionBg = `${palette.bg4}c0`;
-        editorSelectionBgHl = `${palette.bg4}60`;
-      }
-    } // }}}
-    switch (
-      configuration.darkCursor // {{{
-    ) {
-      case "white": {
-        cursorFg = `${palette.fg}`;
-        break;
-      }
-      case "red": {
-        cursorFg = `${palette.red}`;
-        break;
-      }
-      case "orange": {
-        cursorFg = `${palette.orange}`;
-        break;
-      }
-      case "yellow": {
-        cursorFg = `${palette.yellow}`;
-        break;
-      }
-      case "green": {
-        cursorFg = `${palette.green}`;
-        break;
-      }
-      case "aqua": {
-        cursorFg = `${palette.aqua}`;
-        break;
-      }
-      case "blue": {
-        cursorFg = `${palette.blue}`;
-        break;
-      }
-      case "purple": {
-        cursorFg = `${palette.purple}`;
-        break;
-      }
-      default: {
-        cursorFg = `${palette.fg}`;
-      }
-    } // }}}
-  } else {
-    switch (
-      configuration.lightSelection // {{{
-    ) {
-      case "grey": {
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-        break;
-      }
-      case "red": {
-        selectionBg = `${palette.dimRed}60`;
-        editorSelectionBg = `${palette.dimRed}40`;
-        editorSelectionBgHl = `${palette.dimRed}20`;
-        break;
-      }
-      case "orange": {
-        selectionBg = `${palette.dimOrange}60`;
-        editorSelectionBg = `${palette.dimOrange}40`;
-        editorSelectionBgHl = `${palette.dimOrange}20`;
-        break;
-      }
-      case "yellow": {
-        selectionBg = `${palette.dimYellow}60`;
-        editorSelectionBg = `${palette.dimYellow}40`;
-        editorSelectionBgHl = `${palette.dimYellow}20`;
-        break;
-      }
-      case "green": {
-        selectionBg = `${palette.dimGreen}60`;
-        editorSelectionBg = `${palette.dimGreen}40`;
-        editorSelectionBgHl = `${palette.dimGreen}20`;
-        break;
-      }
-      case "aqua": {
-        selectionBg = `${palette.dimAqua}60`;
-        editorSelectionBg = `${palette.dimAqua}40`;
-        editorSelectionBgHl = `${palette.dimAqua}20`;
-        break;
-      }
-      case "blue": {
-        selectionBg = `${palette.dimBlue}60`;
-        editorSelectionBg = `${palette.dimBlue}40`;
-        editorSelectionBgHl = `${palette.dimBlue}20`;
-        break;
-      }
-      case "purple": {
-        selectionBg = `${palette.dimPurple}60`;
-        editorSelectionBg = `${palette.dimPurple}40`;
-        editorSelectionBgHl = `${palette.dimPurple}20`;
-        break;
-      }
-      default: {
-        selectionBg = `${palette.bg4}c0`;
-        editorSelectionBg = `${palette.bg4}a0`;
-        editorSelectionBgHl = `${palette.bg4}50`;
-      }
-    } // }}}
-    switch (
-      configuration.lightCursor // {{{
-    ) {
-      case "black": {
-        cursorFg = `${palette.fg}`;
-        break;
-      }
-      case "red": {
-        cursorFg = `${palette.red}`;
-        break;
-      }
-      case "orange": {
-        cursorFg = `${palette.orange}`;
-        break;
-      }
-      case "yellow": {
-        cursorFg = `${palette.yellow}`;
-        break;
-      }
-      case "green": {
-        cursorFg = `${palette.green}`;
-        break;
-      }
-      case "aqua": {
-        cursorFg = `${palette.aqua}`;
-        break;
-      }
-      case "blue": {
-        cursorFg = `${palette.blue}`;
-        break;
-      }
-      case "purple": {
-        cursorFg = `${palette.purple}`;
-        break;
-      }
-      default: {
-        cursorFg = `${palette.fg}`;
-      }
-    } // }}}
-  }
-  switch (
-    configuration.diagnosticTextBackgroundOpacity // {{{
-  ) {
-    case "0%": {
-      diagnosticTextBackgroundOpacity = "00";
-      break;
-    }
-    case "12.5%": {
-      diagnosticTextBackgroundOpacity = "20";
-      break;
-    }
-    case "25%": {
-      diagnosticTextBackgroundOpacity = "40";
-      break;
-    }
-    case "37.5%": {
-      diagnosticTextBackgroundOpacity = "60";
-      break;
-    }
-    case "50%": {
-      diagnosticTextBackgroundOpacity = "80";
-      break;
-    }
-    default: {
-      diagnosticTextBackgroundOpacity = "00";
-    }
-  } // }}}
+import { Palette } from "../interface";
+
+export function materialWorkbench(palette: Palette, variant: string) {
+  const selectionBg =
+    variant === "dark" ? `${palette.bg4}e0` : `${palette.bg4}c0`;
+  const editorSelectionBg =
+    variant === "dark" ? `${palette.bg4}c0` : `${palette.bg4}a0`;
+  const editorSelectionBgHl =
+    variant === "dark" ? `${palette.bg4}60` : `${palette.bg4}50`;
+  const cursorFg = variant === "dark" ? `${palette.fg}` : `${palette.fg}`;
+  const diagnosticTextBackgroundOpacity = "00"; // 0%
+
   const tokens = {
     foreground: `${palette.grey2}`,
     focusBorder: `${palette.bg}00`,
@@ -266,7 +49,7 @@ export function materialWorkbench(
     "dropdown.background": `${palette.bg}`,
     "dropdown.foreground": `${palette.grey2}`,
     "input.border": `${palette.bg5}`,
-    "input.background": `${palette.bg}00`,
+    "input.background": `${palette.bg}`,
     "input.foreground": `${palette.fg}`,
     "input.placeholderForeground": `${palette.grey0}`,
     "inputOption.activeBorder": `${palette.aqua}`,
@@ -287,7 +70,7 @@ export function materialWorkbench(
     "badge.foreground": `${palette.bg}`,
     "progressBar.background": `${palette.badge}`,
     "list.activeSelectionForeground": `${palette.fg}`,
-    "list.activeSelectionBackground": `${palette.bg4}80`,
+    "list.activeSelectionBackground": `${palette.bg}`,
     "list.inactiveSelectionForeground": `${palette.grey2}`,
     "list.inactiveSelectionBackground": `${palette.bg4}80`,
     "list.dropBackground": `${palette.bg2}80`,
@@ -296,13 +79,13 @@ export function materialWorkbench(
     "list.inactiveFocusBackground": `${palette.bg4}60`,
     "list.highlightForeground": `${palette.green}`,
     "list.hoverForeground": `${palette.fg}`,
-    "list.hoverBackground": `${palette.bg}00`,
+    "list.hoverBackground": `${palette.bg}`,
     "list.invalidItemForeground": `${palette.dimRed}`,
     "list.errorForeground": `${palette.red}`,
     "list.warningForeground": `${palette.yellow}`,
     "tree.indentGuidesStroke": `${palette.grey0}`,
-    "activityBar.border": `${palette.bg}`,
-    "activityBar.background": `${palette.bg}`,
+    "activityBar.border": `${palette.bg1}`,
+    "activityBar.background": `${palette.bg1}`,
     "activityBar.foreground": `${palette.fg}`,
     "activityBar.inactiveForeground": `${palette.grey1}`,
     "activityBar.dropBackground": `${palette.bg}`,
@@ -311,8 +94,8 @@ export function materialWorkbench(
     "activityBarBadge.background": `${palette.badge}`,
     "activityBarBadge.foreground": `${palette.bg}`,
     "sideBar.foreground": `${palette.grey1}`,
-    "sideBar.background": `${palette.bg}`,
-    "sideBarSectionHeader.background": `${palette.bg}00`,
+    "sideBar.background": `${palette.bg1}`,
+    "sideBarSectionHeader.background": `${palette.bg1}`,
     "sideBarTitle.foreground": `${palette.grey2}`,
     "sideBarSectionHeader.foreground": `${palette.grey2}`,
     "minimap.findMatchHighlight": `${palette.dimAqua}60`,
@@ -323,15 +106,15 @@ export function materialWorkbench(
     "minimapGutter.modifiedBackground": `${palette.dimBlue}a0`,
     "minimapGutter.deletedBackground": `${palette.dimRed}a0`,
     "editorGroup.border": `${palette.bg0}`,
-    "editorGroupHeader.tabsBackground": `${palette.bg}`,
-    "editorGroupHeader.noTabsBackground": `${palette.bg}`,
+    "editorGroupHeader.tabsBackground": `${palette.bg0}`,
+    "editorGroupHeader.noTabsBackground": `${palette.bg0}`,
     "editorGroup.dropBackground": `${palette.bg5}60`,
-    "tab.border": `${palette.bg}`,
+    "tab.border": `${palette.bg0}`,
     "tab.activeBorder": `${palette.badge}d0`,
-    "tab.inactiveBackground": `${palette.bg}`,
-    "tab.hoverBackground": `${palette.bg}`,
+    "tab.inactiveBackground": `${palette.bg1}`,
+    "tab.hoverBackground": `${palette.bg1}`,
     "tab.hoverForeground": `${palette.fg}`,
-    "tab.activeBackground": `${palette.bg}`,
+    "tab.activeBackground": `${palette.bg0}`,
     "tab.activeForeground": `${palette.fg}`,
     "tab.inactiveForeground": `${palette.grey0}`,
     "tab.unfocusedActiveForeground": `${palette.grey2}`,
@@ -339,7 +122,7 @@ export function materialWorkbench(
     "tab.unfocusedInactiveForeground": `${palette.grey0}`,
     "tab.unfocusedHoverForeground": `${palette.fg}`,
     "tab.lastPinnedBorder": `${palette.badge}d0`,
-    "editor.background": `${palette.bg}`,
+    "editor.background": `${palette.bg0}`,
     "editor.foreground": `${palette.fg}`,
     "editorLineNumber.foreground": `${palette.grey0}a0`,
     "editorLineNumber.activeForeground": `${palette.grey2}e0`,
@@ -353,12 +136,11 @@ export function materialWorkbench(
       variant === "dark" ? `${palette.bg4}b0` : `${palette.bg4}90`,
     "editor.hoverHighlightBackground":
       variant === "dark" ? `${palette.bg4}b0` : `${palette.bg4}90`,
-    "editor.findMatchBackground": `${palette.dimOrange}40`,
+    "editor.findMatchBackground": `${palette.bg0}`,
     "editor.findMatchHighlightBackground": `${palette.dimGreen}40`,
     "editor.findRangeHighlightBackground": `${editorSelectionBgHl}`,
     "editor.lineHighlightBorder": `${palette.bg5}00`,
-    "editor.lineHighlightBackground":
-      variant === "dark" ? `${palette.bg3}90` : `${palette.bg3}70`,
+    "editor.lineHighlightBackground": `${palette.bg3}`,
     "editor.rangeHighlightBackground": `${palette.bg3}80`,
     "editor.symbolHighlightBackground": `${palette.dimBlue}40`,
     "editorLink.activeForeground": `${palette.green}`,
@@ -375,7 +157,7 @@ export function materialWorkbench(
     "editorCodeLens.foreground": `${palette.grey0}a0`,
     "editor.foldBackground": `${palette.bg5}80`,
     "editorBracketMatch.border": `${palette.bg}00`,
-    "editorBracketMatch.background": `${palette.bg5}`,
+    "editorBracketMatch.background": `${palette.bg0}`,
     "editorBracketHighlight.foreground1": `${palette.red}`,
     "editorBracketHighlight.foreground2": `${palette.yellow}`,
     "editorBracketHighlight.foreground3": `${palette.green}`,
@@ -383,7 +165,7 @@ export function materialWorkbench(
     "editorBracketHighlight.foreground5": `${palette.orange}`,
     "editorBracketHighlight.foreground6": `${palette.purple}`,
     "editorBracketHighlight.unexpectedBracket.foreground": `${palette.grey1}`,
-    "editorOverviewRuler.border": `${palette.bg}00`,
+    "editorOverviewRuler.border": `${palette.bg0}`,
     "editorOverviewRuler.findMatchForeground": `${palette.dimAqua}`,
     "editorOverviewRuler.rangeHighlightForeground": `${palette.dimAqua}`,
     "editorOverviewRuler.selectionHighlightForeground": `${palette.dimAqua}`,
@@ -418,15 +200,15 @@ export function materialWorkbench(
     "diffEditor.insertedTextBackground": `${palette.dimAqua}30`,
     "diffEditor.removedTextBackground": `${palette.dimRed}30`,
     "diffEditor.diagonalFill": `${palette.bg5}`,
-    "editorSuggestWidget.background": `${palette.bg3}`,
+    "editorSuggestWidget.background": `${palette.bg2}`,
     "editorSuggestWidget.foreground": `${palette.fg}`,
     "editorSuggestWidget.highlightForeground": `${palette.green}`,
-    "editorSuggestWidget.selectedBackground": `${palette.bg4}`,
+    "editorSuggestWidget.selectedBackground": `${palette.bg3}`,
     "editorSuggestWidget.border": `${palette.bg3}`,
     "editorWidget.background": `${palette.bg}`,
     "editorWidget.foreground": `${palette.fg}`,
     "editorWidget.border": `${palette.bg5}`,
-    "editorHoverWidget.background": `${palette.bg2}`,
+    "editorHoverWidget.background": `${palette.bg0}`,
     "editorHoverWidget.border": `${palette.bg4}`,
     "editorGhostText.background": `${palette.bg}00`,
     "editorGhostText.foreground": `${palette.grey0}a0`,
@@ -470,7 +252,7 @@ export function materialWorkbench(
     "terminal.ansiWhite":
       variant === "dark" ? `${palette.fg}` : `${palette.grey1}`,
     "terminal.ansiYellow": `${palette.yellow}`,
-    "debugToolBar.background": `${palette.bg}`,
+    "debugToolBar.background": `${palette.bg0}`,
     "debugTokenExpression.name": `${palette.blue}`,
     "debugTokenExpression.value": `${palette.green}`,
     "debugTokenExpression.string": `${palette.yellow}`,
@@ -511,14 +293,14 @@ export function materialWorkbench(
     "panelSection.border": `${palette.bg0}`,
     "panelSectionHeader.background": `${palette.bg}`,
     "imagePreview.border": `${palette.bg}`,
-    "statusBar.background": `${palette.bg}`,
+    "statusBar.background": `${palette.bg1}`,
     "statusBar.foreground": `${palette.grey2}`,
-    "statusBar.border": `${palette.bg}`,
+    "statusBar.border": `${palette.bg1}`,
     "statusBar.debuggingForeground": `${palette.orange}`,
-    "statusBar.debuggingBackground": `${palette.bg}`,
-    "statusBar.noFolderBackground": `${palette.bg}`,
+    "statusBar.debuggingBackground": `${palette.bg1}`,
+    "statusBar.noFolderBackground": `${palette.bg0}`,
     "statusBar.noFolderForeground": `${palette.grey2}`,
-    "statusBar.noFolderBorder": `${palette.bg}`,
+    "statusBar.noFolderBorder": `${palette.bg0}`,
     "statusBarItem.hoverBackground": `${palette.bg4}a0`,
     "statusBarItem.activeBackground": `${palette.bg4}70`,
     "statusBarItem.prominentForeground": `${palette.fg}`,
@@ -530,15 +312,15 @@ export function materialWorkbench(
     "statusBarItem.errorForeground": `${palette.red}`,
     "statusBarItem.warningBackground": `${palette.bg}`,
     "statusBarItem.warningForeground": `${palette.yellow}`,
-    "titleBar.activeBackground": `${palette.bg}`,
+    "titleBar.activeBackground": `${palette.bg1}`,
     "titleBar.activeForeground": `${palette.grey2}`,
-    "titleBar.inactiveBackground": `${palette.bg}`,
+    "titleBar.inactiveBackground": `${palette.bg1}`,
     "titleBar.inactiveForeground": `${palette.grey0}`,
-    "titleBar.border": `${palette.bg}`,
+    "titleBar.border": `${palette.bg1}`,
     "menubar.selectionBackground": `${palette.bg}`,
     "menubar.selectionBorder": `${palette.bg}`,
     "menu.foreground": `${palette.grey2}`,
-    "menu.background": `${palette.bg}`,
+    "menu.background": `${palette.bg0}`,
     "menu.selectionForeground": `${palette.fg}`,
     "menu.selectionBackground": `${palette.bg2}`,
     "gitDecoration.addedResourceForeground": `${palette.green}a0`,
@@ -553,7 +335,7 @@ export function materialWorkbench(
     "notificationCenterHeader.foreground": `${palette.fg}`,
     "notificationCenterHeader.background": `${palette.bg3}`,
     "notifications.foreground": `${palette.fg}`,
-    "notifications.background": `${palette.bg}`,
+    "notifications.background": `${palette.bg0}`,
     "notificationLink.foreground": `${palette.green}`,
     "notificationsErrorIcon.foreground": `${palette.red}`,
     "notificationsWarningIcon.foreground": `${palette.yellow}`,
@@ -568,6 +350,7 @@ export function materialWorkbench(
     "extensionIcon.preReleaseForeground": `${palette.orange}`,
     "pickerGroup.foreground": `${palette.fg}`,
     "quickInputTitle.background": `${palette.bg2}`,
+    "quickInput.background": `${palette.bg0}`,
     "keybindingLabel.background": `${palette.bg}00`,
     "keybindingLabel.foreground": `${palette.fg}`,
     "keybindingLabel.border": `${palette.bg1}`,
@@ -597,9 +380,11 @@ export function materialWorkbench(
     "welcomePage.buttonBackground": `${palette.bg2}`,
     "welcomePage.buttonHoverBackground": `${palette.bg2}a0`,
     "walkThrough.embeddedEditorBackground": `${palette.bg1}`,
+    "breadcrumb.background": `${palette.bg0}`,
     "breadcrumb.foreground": `${palette.grey1}`,
     "breadcrumb.focusForeground": `${palette.fg}`,
     "breadcrumb.activeSelectionForeground": `${palette.fg}`,
+    "breadcrumbPicker.background": `${palette.bg}`,
     "symbolIcon.colorForeground": `${palette.fg}`,
     "symbolIcon.snippetForeground": `${palette.fg}`,
     "symbolIcon.fieldForeground": `${palette.fg}`,
@@ -697,12 +482,7 @@ export function materialWorkbench(
     "rust_analyzer.inlayHints.background": `${palette.bg}00`,
     "rust_analyzer.syntaxTreeBorder": `${palette.red}`,
   };
-  if (configuration.highContrast) {
-    Object.assign(tokens, {
-      contrastBorder: `${palette.bg5}`,
-      contrastActiveBorder: `${palette.grey0}`,
-    });
-  }
+
   return tokens;
 }
 
