@@ -1,0 +1,7 @@
+id = "everforest-higure"
+name = "Everforest Higure"
+version = "0.0.1"
+schema_version = 1
+authors = ["haru"]
+description = "Everforest Higure and Yoake themes for Zet"
+repository = "https://github.com/Haruno19/everforest-vscode"
